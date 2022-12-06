@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Pluggable entity view builder group module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function pluggable_entity_view_builder_group_theme($existing, $type, $theme, $path) {
+  $info = [];
+
+  $info['pluggable_entity_view_builder_group_tag'] = [
+    'variables' => [
+      'url' => NULL,
+      'title' => NULL,
+      'border' => FALSE,
+      'color' => NULL,
+    ],
+  ];
+
+  // Content tags.
+  $info['pluggable_entity_view_builder_group_tags'] = [
+    'variables' => [
+      // A list of links.
+      'tags' => [],
+    ],
+  ];
+
+  $info['pluggable_entity_view_builder_group_body'] = [
+    'variables' => [
+      'content' => NULL,
+      'attributes' => NULL,
+    ],
+  ];
+
+  // Content header (node's title and background image).
+  $info['pluggable_entity_view_builder_group_hero_header'] = [
+    'variables' => [
+      'url' => NULL,
+      'title' => NULL,
+      'name' => NULL,
+      'label' => NULL,
+    ],
+  ];
+
+  $info['pluggable_entity_view_builder_group_card'] = [
+    'variables' => [
+      'image' => NULL,
+      'image_alt' => NULL,
+      'title' => NULL,
+      'url' => NULL,
+      'body' => NULL,
+      // A list of links.
+      'tags' => [],
+      'author' => NULL,
+    ],
+  ];
+
+  // A grid of cards.
+  $info['pluggable_entity_view_builder_group_cards'] = [
+    'variables' => [
+      'items' => '',
+    ],
+  ];
+
+  // Wrap element with a container classes.
+  $info['pluggable_entity_view_builder_group_container'] = [
+    'variables' => [
+      'content' => NULL,
+    ],
+  ];
+
+  return $info;
+}
+
